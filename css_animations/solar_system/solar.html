@@ -1,0 +1,84 @@
+<html lang="en"><head>
+
+  <title>Solar System</title>
+  <link rel="stylesheet" href="solar.css">
+  
+
+</head>
+
+<body>
+<div class="solar-syst">
+  <div id="sun"></div>
+  <div class="orbit" id="mercury-orbit">
+    <div class="planet" id="mercury"></div>
+  </div>
+  <div class="orbit" id="venus-orbit">
+    <div class="planet" id="venus"></div>
+  </div>
+  <div class="orbit" id="earth-orbit">
+    <div class="orbit" id="moon-orbit">
+      <div class="planet" id="moon"></div>
+    </div>
+    <div class="planet" id="earth"></div>
+  </div>
+  <div class="orbit" id="mars-orbit">
+    <div class="planet" id="mars"></div>
+  </div>
+  <div id="asteroid-belt"></div>
+  <div class="orbit" id="jupiter-orbit">
+    <div class="planet" id="jupiter"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function addStars() {
+    for(let i=0; i< 200; i++){
+      addStar(i)
+    }
+  }
+  function addStar(i) {
+    const newDiv = document.createElement("div");
+    newDiv.id = "star"+i
+    newDiv.className = "star"
+    newDiv.style.top = Math.floor(Math.random() * 100) + "%";
+    newDiv.style.left = Math.floor(Math.random() * 100)+ "%";
+    newDiv.style.opacity = Math.random();
+    document.body.appendChild(newDiv);
+  }
+  function addAsteroids() {
+    for(let i=0; i< 100; i++){
+      addAsteroid(i)
+    }
+  }
+  function addAsteroid(i) {
+    const newDiv = document.createElement("div");
+    newDiv.id = "asteroid"+i
+    newDiv.className = "asteroid"
+    donut = rand_donut_v2()
+    newDiv.style.top = donut[0]+ "%"
+    newDiv.style.left = donut[1]+ "%"
+    newDiv.style.opacity = Math.random();
+    document.getElementById("asteroid-belt").appendChild(newDiv);
+  }
+  let donut_shape = {
+    width: 100,
+    height: 100,
+    thickness: 0.25
+  };
+
+  let rand_donut_v2 = function(){
+    // Random radius uniformly = not uniform in cartesian
+    let theta = Math.random() * Math.PI * 2;
+    let radius = 1-(Math.random()*donut_shape.thickness);
+
+    return [
+      Math.cos(theta) * radius * donut_shape.width/2 + 50, 
+      Math.sin(theta) * radius * donut_shape.height/2 + 50
+    ];
+  }
+
+  addStars();
+  addAsteroids();
+</script>
+  
+</body></html>
