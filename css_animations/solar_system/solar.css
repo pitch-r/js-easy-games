@@ -1,0 +1,167 @@
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+div {
+  border-radius: 1000px;
+}
+
+body {
+  background: radial-gradient(ellipse at bottom, #1C2837 0%, #050608 100%);
+  background-attachment: fixed;
+}
+
+.star {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  background-color: white;
+}
+
+.asteroid {
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  background-color: white;
+  border-radius: 10px
+}
+
+.planet {
+  position: absolute;
+  left:50%;
+}
+
+.orbit {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  border: 1px solid rgba(102, 166, 229, 0.12);
+}
+
+#sun {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  background: linear-gradient(#ffd000, #f9b700, #f9b700, #e06317);
+  height: 40px;
+  width: 40px;
+  margin-top: -20px;
+  margin-left: -20px;
+  box-shadow: 0 0 10px 2px rgba(255, 107, 0, 0.4), 0 0 22px 11px rgba(255, 203, 0, 0.13);
+}
+
+#mercury-orbit {
+  height: 70px;
+  width: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  animation: orb 7.1867343561s linear infinite;
+}
+
+#mercury {
+  height: 4px;
+  width: 4px;
+  background: #9f5e26;
+  margin-top: -2px;
+  margin-left: -2px;
+}
+
+#venus-orbit {
+  height: 100px;
+  width: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  animation: orb 18.4555338265s linear infinite;
+}
+#venus {
+  height: 8px;
+  width: 8px;
+  background: #BEB768;
+  margin-top: -4px;
+  margin-left: -4px;
+}
+
+#earth-orbit {
+  height: 145px;
+  width: 145px;
+  margin-top: -72.5px;
+  margin-left: -72.5px;
+  animation: orb 30s linear infinite;
+}
+
+#earth {
+  height: 6px;
+  width: 6px;
+  background: #11abe9;
+  margin-top: -3px;
+  margin-left: -3px;
+}
+
+#mars-orbit {
+  height: 190px;
+  width: 190px;
+  margin-top: -95px;
+  margin-left: -95px;
+  animation: orb 56.4261314589s linear infinite;
+}
+
+#mars {
+  height: 6px;
+  width: 6px;
+  background: #cf3921;
+  margin-top: -3px;
+  margin-left: -3px;
+}
+
+#moon-orbit {
+  height: 15px;
+  width: 15px;
+  margin-top: -80px;
+  margin-left: -9px;
+  border: 0px solid rgba(102, 166, 229, 0.12);
+  animation: orb 2.2440352158s linear infinite;
+}
+
+#moon {
+  height: 2px;
+  width: 2px;
+  background: lightyellow;
+  margin-top: -1px;
+  margin-left: -1px;
+}
+
+#jupiter-orbit {
+  height: 340px;
+  width: 340px;
+  margin-top: -170px;
+  margin-left: -170px;
+  animation: orb 355.7228171013s linear infinite;
+}
+#jupiter {
+  height: 18px;
+  width: 18px;
+  background: #c76e2a;
+  margin-top: -9px;
+  margin-left: -9px;
+}
+
+#asteroid-belt {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  margin-top: -150px;
+  margin-left: -150px;
+  animation: orb 179.9558282773s linear infinite;
+}
+
+@keyframes orb{
+  100% {
+    transform:rotate(-360deg)
+  }
+}
