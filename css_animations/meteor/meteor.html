@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+  <title>Meteor Shower</title>
+  <link rel="stylesheet" href="meteor.css">
+</head>
+
+<body>
+  <div id="meteor-template">
+    <div class="meteor">
+      <div class="met-head">
+        <div class="met-head1"></div>
+        <div class="met-head2"></div>
+      </div>
+      <div class="met-tail"></div>
+    </div>
+  </div>
+<div id="scene">
+  </div>
+    <img src="mountain-11974.png" width="100%" id="mountain"/>
+    <div id="ground"></div>
+</div>
+
+<script type="text/javascript">
+  function rand_range(start,end) {return start + Math.random() * (end-start);}
+
+  const scene = document.getElementById('scene');
+  const template = document.getElementById('meteor-template').firstElementChild;
+
+  function build_meteor(){
+    let new_meteor = template.cloneNode(true);
+    new_meteor.style.top = rand_range(-20,40)+"%";
+    new_meteor.style.left = rand_range(10,100)+"%";
+    new_meteor.style.width = rand_range(80,450)+"px";
+    scene.appendChild(new_meteor);
+    setTimeout(function(){
+      scene.removeChild(new_meteor);
+    }, 2000);
+
+    setTimeout(build_meteor, rand_range(400,500));
+  }
+  build_meteor();
+
+  function addStars() {
+    for(let i=0; i< 200; i++){
+      addStar(i)
+    }
+  }
+  function addStar(i) {
+    const newDiv = document.createElement("div");
+    newDiv.id = "star"+i
+    newDiv.className = "star"
+    let topp = Math.floor(Math.random() * 100)
+    newDiv.style.top = topp + "%";
+    newDiv.style.left = Math.floor(Math.random() * 100)+ "%";
+    newDiv.style.opacity = Math.random();
+    document.body.appendChild(newDiv);
+  }
+  addStars()
+</script>
+  
+</body></html>
