@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-color: black;
+            }
+            #game {
+                width: 1000px;
+                height: 700px;
+                border: 5px solid white;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 100px;
+            }
+            #game2 {
+                position: relative;
+            }
+            .player-block {
+                width: 20px;
+                height: 150px;
+                background-color: white;
+                position: absolute;
+            }
+            #p1 {
+                top: 275px;
+                left: 20px;
+            }
+            #p2 {
+                top: 275px;
+                right: 20px;
+            }
+            #center-line {
+                width: 0px;
+                height: 700px;
+                border-right: 5px dashed grey;
+                position: absolute;
+                left: 497.5px;
+            }
+            #ball {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-color: white;
+                position: absolute;
+                top: 335px;
+                left: 485px;
+            }
+            .score {
+                position: absolute;
+                color: #555;
+                font-family: sans-serif;
+                font-size: 200px;
+                text-align: center;
+                z-index: -1;
+                top: 230px;
+                height: 200px;
+                width: 500px;
+            }
+            #p1-score {
+                left: 0;
+            }
+            #p2-score {
+                right: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="game">
+            <div id="game2">
+                <div id="center-line"></div>
+                <div class="player-block" id="p1"></div>
+                <div class="player-block" id="p2"></div>
+                <div id="ball"></div>
+                <div class="score" id="p1-score">0</div>
+                <div class="score" id="p2-score">0</div>
+            </div>
+        </div>
+        <!-- <script src="pong.js"></script> -->
+    </body>
+</html>
